@@ -1,0 +1,174 @@
+:not(:defined) {
+    visibility: hidden;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+:root {
+    --violeta: #56427F;
+    --blanco: #F5F0F0;
+    --amarillo: #EFB31E;
+    --amarillo-brillante: #FEC529;
+    --colorado: #D2683A;
+}
+
+/* Estilos tipofráficos */
+
+.montserrat-thin {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+.montserrat-extralight {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+.montserrat-light {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.montserrat-medium {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+.montserrat-semibold {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+.montserrat-bold {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+.montserrat-extrabold {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+.montserrat-black {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+
+
+/* Tarjetas de productos */
+.tarjeta {
+    height: fit-content;
+    width: 300px;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+}
+@media(hover:hover) {
+    .tarjeta:hover {
+        border: 2px solid var(--violeta);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        /* transform: translateY(-5px); */
+        transition: all 0.3s ease;
+    }
+    .tarjeta:hover .imagen-producto img {
+        border-bottom: 2px solid var(--violeta);
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+    }
+}
+
+.imagen-producto img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.nombre-producto {
+    margin: .85rem 0;
+}
+
+.contenido-producto {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.categoria-etiqueta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    background-color: var(--colorado);
+    color: var(--blanco);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.contenido-producto, .accion-producto {
+    background-color: #f4f4f4;
+}
+
+.accion-producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px 20px;
+}
+
+.accion-producto button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--violeta);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.accion-producto button:hover {
+    color: var(--blanco);
+    background-color: #28a745;
+}
