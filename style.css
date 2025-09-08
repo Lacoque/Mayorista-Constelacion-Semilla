@@ -4,16 +4,21 @@
 
 body {
     font-family: "Montserrat", sans-serif;
-    margin: 0;
+    margin: 80px 0 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 :root {
     --violeta: #56427F;
+    --violeta-50: #56427f80;
+    --violeta-20: #56427f33;
     --blanco: #F5F0F0;
+    --blanco-70: #f5f0f0b3;
     --amarillo: #EFB31E;
     --amarillo-brillante: #FEC529;
     --colorado: #D2683A;
+    --negro: #424242;
+    --negro-08: #42424214;
 }
 
 /* Estilos tipofráficos */
@@ -75,6 +80,157 @@ body {
 
 
 
+/* Menu de navegación */
+.menu-navegador{
+    width: 100%;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    color: var(--blanco);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    align-items: center;
+    padding: 10px clamp(20px, 5vw, 50px);
+}
+
+nav > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav > div p {
+    background-color: var(--violeta-50);
+    padding: .3rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: var(--blanco);
+    margin: 0;
+    font-size: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    display: inline-block;
+    transition: all 0.15s ease;
+    color: var(--violeta);
+    text-decoration: none;
+}
+nav a img {
+    height: 60px;
+    vertical-align: middle;
+    /* mix-blend-mode: multiply; */
+}
+
+@media (hover:hover) {
+    nav ul li a:hover {
+        color: var(--amarillo-brillante);
+        transform: scale(1.1);
+        transition: all 0.15s ease;
+    }
+    
+}
+
+header {
+    margin: 20px auto;
+    padding: 20px 80px;
+}
+
+header > h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    border-radius: 10px;
+    padding: .5rem 1rem;
+    background-color: var(--violeta-20);
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    color: var(--violeta);
+}
+
+header > h2 {
+    font-size: clamp(1.2rem, 3vw, 4rem);
+    color: var(--violeta);
+    margin: 10px 0;
+}
+
+header > p {
+    font-size: clamp(1rem, 2vw, 2rem);
+    color: var(--negro);
+    margin: 10px 0;
+}
+
+.quienes-somos {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+
+.quienes-somos img {
+    width: 45%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.info-quienes-somos {
+    width: 50vw;
+    position: absolute;
+    right: 150px;
+    background-color: var(--blanco-70);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+
+.info-quienes-somos h2,
+.info-quienes-somos p,
+.info-quienes-somos a {
+    color: var(--negro);
+}
+
+.info-quienes-somos p {
+    font-weight: 600;
+}
+
+.info-quienes-somos > div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: .5rem 0rem;
+}
+
+.info-quienes-somos > div a {
+    text-decoration: none;
+    color: var(--negro);
+    transition: all .1s;
+    padding: .5rem 1rem;
+    background-color: none;
+    border-radius: 5px;
+}
+
+@media (hover:hover) {
+    .info-quienes-somos > div a:hover {
+        font-weight: 600;
+        transform: scale(1.05);
+        background-color: var(--violeta-20);
+    }
+}
+
+
+/* Productos */
 .productos {
     display: flex;
     flex-wrap: wrap;
@@ -88,6 +244,29 @@ body {
 
 
 /* Tarjetas de productos */
+.productos-destacados-categorias {
+    margin: 1rem;
+    border-radius: 10px;
+    padding: 3rem;
+    background-color: var(--negro-08);
+}
+
+.productos-destacados-categorias > .productos a {
+    text-decoration: none;
+}
+
+.productos-destacados-categorias > .productos .tarjeta {
+    width: 250px;
+}
+
+.productos-destacados-categorias .accion-producto p {
+    opacity: 0;
+    margin: 0;
+    transition: all .3s ease-in-out;
+    text-align: start;
+}
+
+
 .tarjeta {
     height: fit-content;
     width: 400px;
@@ -109,6 +288,11 @@ body {
         border-bottom: 2px solid var(--violeta);
         transform: scale(1.05);
         transition: all 0.3s ease;
+    }
+
+    .productos-destacados-categorias .tarjeta:hover .accion-producto p {
+        opacity: 1;
+        transform: translateY(-5px);
     }
 }
 
