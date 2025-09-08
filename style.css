@@ -90,7 +90,7 @@ body {
 /* Tarjetas de productos */
 .tarjeta {
     height: fit-content;
-    width: 300px;
+    width: 400px;
     background: #fff;
     border: 2px solid #ddd;
     border-radius: 5px;
@@ -126,6 +126,11 @@ body {
 .contenido-producto {
     padding: 10px 20px;
     text-align: left;
+}
+
+.contenido-producto p {
+    height: 20vh;
+    overflow: auto;
 }
 
 .categoria-etiqueta {
