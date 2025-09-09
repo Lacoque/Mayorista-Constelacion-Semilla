@@ -18,10 +18,16 @@
                 <p class="montserrat-bold">Mayorista</p>
             </div>
             <ul>
-                <li><a class="montserrat-bold" href="frutos.html">Frutos</a></li>
-                <li><a class="montserrat-bold" href="hojas.html">Hojas</a></li>
-                <li><a class="montserrat-bold" href="raices.html">Raíces</a></li>
-                <li><a class="montserrat-bold" href="flores.html">Flores</a></li>
+                <li><a class="montserrat-bold" href="#form">Contactanos</a></li>
+                <li><a class="montserrat-bold" href="index.html#quienes">Quienes Somos</a></li>
+                <li class="dropdown">
+                    <a class="montserrat-bold" href="#">Semillas <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="semillas-frutas.html">Frutas</a></li>
+                        <li><a href="semillas-hojas.html">Hojas</a></li>
+                        <li><a href="semillas-flores.html">Flores</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>
@@ -33,7 +39,7 @@
     </header>
 
     <!-- Sección: Quiénes somos -->
-    <section>
+    <section id="quienes">
         <div class="quienes-somos">
             <img src="assets/img/campo-constelacion-semilla.jpg" alt="Campo de constelación semillas">
             <div class="info-quienes-somos">
@@ -51,7 +57,7 @@
             <!-- <button type="button">Comunicarme<i class="fa-solid fa-envelope"></i></button> -->
         </div>
         <div class="productos-destacados-categorias">
-            <h4>Elegí los productos por categoría</h4>
+            <h3>Elegí los productos por categoría</h3>
             <div class="productos">
                 <a href="./frutos.html">
                     <div class="tarjeta">
@@ -127,30 +133,40 @@
 
     <!-- Banner promocional?????? -->
     <section>
-        <p>
-            <strong>Descuentos por volumen en semillas agroecológicas</strong>. 
-            Comprá al por mayor y aprovechá mejores precios por cantidad. 
-            Ideal para productores, huertas familiares, cooperativas y viveros. 
-            Consultá condiciones y pedidos personalizados. 
-            <a href="#contacto">Contactanos ahora →</a>
-        </p>
+        <div class="banner">
+            <!-- Para mi este boton debería llevar a whatsapp -->
+            <a class="banner-accion" href="#contacto">
+                <img src="./assets/img/productos/albahaca-morada-deep-purple.png" alt="">
+                <div class="info-banner">
+                    <p>Descuentos por volumen en semillas agroecológicas</p>
+                    <h2>Comprá al por mayor y aprovechá mejores precios por cantidad.</h2>
+                    <p>Ideal para productores, huertas familiares, cooperativas y viveros. Consultá condiciones y pedidos personalizados.</p>
+                    <p class="pedido">Realizar pedido</p>
+                </div>
+            </a>
+        </div>
     </section>
 
     <!-- Sección: Contacto -->
     <section id="form">
-        <h2>Contactanos</h2>
+        <div class="titulo-form">
+            <img src="./assets/img/Generated Image September 09, 2025 - 7_25PM.png" alt="Logo de constelación semillas">
+            <h2>Contactanos</h2>
+        </div>
         <p>Somos un emprendimiento social con sede en el pueblo de Merlo, San Luis, pero nos comunicamos con todo el mundo.</p>
         <form name="contacto" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="contacto" />
         
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required>
-        
-            <label for="mail">Mail</label>
-            <input type="email" id="mail" name="mail" required>
-        
-            <label for="texto">Mensaje</label>
-            <textarea id="texto" name="texto" required></textarea>
+            <div class="campos">
+                <!-- <label for="nombre">Nombre</label> -->
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" class="montserrat-medium" required>
+                
+                <!-- <label for="mail">Mail</label> -->
+                <input type="email" id="mail" name="mail" placeholder="Correo electrónico" class="montserrat-medium" required>
+                
+                <!-- <label for="texto">Mensaje</label> -->
+                <textarea id="texto" name="texto" placeholder="Tu mensaje" class="montserrat-medium" required></textarea>
+            </div>
         
             <!-- Campo honeypot para bots (invisible para humanos)Ayuda a reducir spam  -->
             <div style="display: none;">
@@ -158,7 +174,10 @@
                 <input name="bot-field" />
             </div>
         
-            <button type="submit">Enviar →</button>
+            <button type="submit" class="montserrat-medium">Enviar
+                <i class="fa-regular fa-circle-right"></i>
+                <i class="fa-solid fa-envelope"></i>
+            </button>
         </form>
 
         <address>
