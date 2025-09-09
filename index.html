@@ -140,16 +140,24 @@
     <section id="form">
         <h2>Contactanos</h2>
         <p>Somos un emprendimiento social con sede en el pueblo de Merlo, San Luis, pero nos comunicamos con todo el mundo.</p>
-        <form action="/enviar" method="post">
+        <form name="contacto" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contacto" />
+        
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre">
-
+            <input type="text" id="nombre" name="nombre" required>
+        
             <label for="mail">Mail</label>
-            <input type="email" id="mail" name="mail">
-
+            <input type="email" id="mail" name="mail" required>
+        
             <label for="texto">Mensaje</label>
-            <textarea id="texto" name="texto"></textarea>
-
+            <textarea id="texto" name="texto" required></textarea>
+        
+            <!-- Campo honeypot para bots (invisible para humanos)Ayuda a reducir spam  -->
+            <div style="display: none;">
+                <label>¡No rellenes esto si eres humano!</label>
+                <input name="bot-field" />
+            </div>
+        
             <button type="submit">Enviar →</button>
         </form>
 
