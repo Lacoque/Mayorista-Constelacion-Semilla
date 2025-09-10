@@ -499,12 +499,20 @@ header > p {
 
 /* Formulario de contacto */
 #form {
+    display: flex;
     margin: 2rem auto;
-    padding: 2rem;
     border-radius: 10px;
     background-color: var(--negro-08);
     width: fit-content;
-    max-width: 600px;
+    max-width: 1000px;
+    height: fit-content;
+    overflow: hidden;
+}
+
+#form > img:first-of-type {
+    height: auto;
+    width: 50%;
+    object-fit: cover;
 }
 
 #form form {
@@ -513,6 +521,10 @@ header > p {
     align-items: center;
     justify-content: center;
     gap: 2rem;
+}
+
+#form .formulario-contenido {
+    padding: 2rem;
 }
 
 .titulo-form {
@@ -524,7 +536,7 @@ header > p {
     object-fit: cover;
     width: auto;
     height: 10vh;
-    mix-blend-mode: color;
+    mix-blend-mode: darken;
 }
 
 #form form input,
@@ -593,7 +605,7 @@ header > p {
 
 @media (hover:hover) {
     #form form button:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
     #form form button:hover i:nth-child(2) {
         display: inline;
@@ -604,5 +616,73 @@ header > p {
         display: none;
         opacity: 0;
         transform: translateY(-5px);
+    }
+}
+
+.accion-form {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+
+#direccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--negro-08);
+    color: var(--blanco);
+    text-align: start;
+    padding: 1rem 4rem;
+}
+
+footer img {
+    width: auto;
+    height: 70px;
+    mix-blend-mode: multiply;
+    filter: grayscale(1);
+}
+
+footer div p,
+footer div a {
+    color: var(--negro);
+    text-decoration: none;
+    margin: .5rem 0rem;
+}
+
+footer .footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer .footer-contenido ul {
+    margin: 0;
+    list-style: none;
+    padding: 0rem;
+}
+footer .footer-contenido ul li {
+    padding: .2rem 0rem;
+    transition: all .3s;
+}
+footer .footer-contenido ul li a {
+    font-size: small;
+    text-transform: uppercase;
+}
+
+@media(hover:hover) {
+    footer .footer-contenido ul li:hover a {
+        color: var(--amarillo)
+    }
+    footer .footer-contenido ul li:hover {
+        transform:translateX(5px)
     }
 }
