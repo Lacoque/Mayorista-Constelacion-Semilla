@@ -39,23 +39,7 @@
     </header>
 
     <!-- Sección: Quiénes somos -->
-    <section id="quienes">
-        <div class="quienes-somos">
-            <img src="assets/img/campo-constelacion-semilla.jpg" alt="Campo de constelación semillas">
-            <div class="info-quienes-somos">
-                <h2>Quiénes somos</h2>
-                <p>
-                    Constelación es una Semillería agroecológica que trabaja de forma colaborativa, abierta al diálogo con todos los actores de la cadena productiva, brindados al servicio de la agricultura.
-                </p>
-                <p>
-                    Juntos integramos una Red de Multiplicadores de Semillas de pequeños productores, ubicados en diferentes provincias del País, quienes producen las semillas en forma cuidada y coordinada, y Constelación se encarga de que estas semillas lleguen a ti — de agricultor a agricultor o huertero familiar.
-                </p>
-                <div>
-                    <a href="#form">Comunicarme <i class="fa-solid fa-envelope"></i></a>
-                </div>
-            </div>
-            <!-- <button type="button">Comunicarme<i class="fa-solid fa-envelope"></i></button> -->
-        </div>
+    <section>
         <div class="productos-destacados-categorias">
             <h3>Elegí los productos por categoría</h3>
             <div class="productos">
@@ -129,6 +113,23 @@
 
             </div>
         </div>
+
+        <div id="quienes" class="quienes-somos">
+            <img src="assets/img/campo-constelacion-semilla.jpg" alt="Campo de constelación semillas">
+            <div class="info-quienes-somos">
+                <h2>Quiénes somos</h2>
+                <p>
+                    Constelación es una Semillería agroecológica que trabaja de forma colaborativa, abierta al diálogo con todos los actores de la cadena productiva, brindados al servicio de la agricultura.
+                </p>
+                <p>
+                    Juntos integramos una Red de Multiplicadores de Semillas de pequeños productores, ubicados en diferentes provincias del País, quienes producen las semillas en forma cuidada y coordinada, y Constelación se encarga de que estas semillas lleguen a ti — de agricultor a agricultor o huertero familiar.
+                </p>
+                <div>
+                    <a href="#form">Comunicarme <i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <!-- <button type="button">Comunicarme<i class="fa-solid fa-envelope"></i></button> -->
+        </div>
     </section>
 
     <!-- Banner promocional?????? -->
@@ -149,40 +150,78 @@
 
     <!-- Sección: Contacto -->
     <section id="form">
-        <div class="titulo-form">
-            <img src="./assets/img/Generated Image September 09, 2025 - 7_25PM.png" alt="Logo de constelación semillas">
-            <h2>Contactanos</h2>
-        </div>
-        <p>Somos un emprendimiento social con sede en el pueblo de Merlo, San Luis, pero nos comunicamos con todo el mundo.</p>
-        <form name="contacto" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contacto" />
-        
-            <div class="campos">
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" class="montserrat-medium" required>
-                <input type="email" id="mail" name="mail" placeholder="Correo electrónico" class="montserrat-medium" required>
-                <textarea id="texto" name="texto" placeholder="Tu mensaje" class="montserrat-medium" required></textarea>
+        <img src="./assets/img/formulario-constelacion-semilla.jpg" alt="Logo de constelación semillas">
+        <div class="formulario-contenido">
+            <div class="titulo-form">
+                <img src="./assets/img/Generated Image September 09, 2025 - 7_25PM.png" alt="Logo de constelación semillas">
+                <h2>Contactanos</h2>
             </div>
-            <!-- Campo honeypot para bots (invisible para humanos)Ayuda a reducir spam  -->
-            <div style="display: none;">
-                <label>¡No rellenes esto si eres humano!</label>
-                <input name="bot-field" />
+            <p>Somos un emprendimiento social con sede en el pueblo de Merlo, San Luis, pero nos comunicamos con todo el mundo.</p>
+            <form name="contacto" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contacto" />
+                
+                <div class="campos">
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" class="montserrat-medium" required>
+                    <input type="email" id="mail" name="mail" placeholder="Correo electrónico" class="montserrat-medium" required>
+                    <textarea id="texto" name="texto" placeholder="Tu mensaje" class="montserrat-medium" required></textarea>
+                </div>
+                <!-- Campo honeypot para bots (invisible para humanos)Ayuda a reducir spam  -->
+                <div style="display: none;">
+                    <label>¡No rellenes esto si eres humano!</label>
+                    <input name="bot-field" />
+                </div>
+                <div class="accion-form">
+                    <button type="submit" class="montserrat-medium">Enviar
+                        <i class="fa-regular fa-circle-right"></i>
+                        <i class="fa-solid fa-envelope"></i>
+                    </button>
+                </div>
             </div>
-            <button type="submit" class="montserrat-medium">Enviar
-                <i class="fa-regular fa-circle-right"></i>
-                <i class="fa-solid fa-envelope"></i>
-            </button>
         </form>
-
-        <address>
+    </section>
+    <section id="direccion">
+        <address class="montserrat-bold">
             Ruta 1 - Km 3.5 | Villa de Merlo, San Luis, Argentina
         </address>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; Constelación Semillas Agroecológicas</p>
-    
-  <!-- nahue agreguemos nuestro logo o firma -->
+        <div class="footer-contenido">
+            <div>
+                <img src="./assets/img/marca-constelacion-semilla-texto.png" alt="Marca de Constelación Semillas">
+            </div>
+            <div>
+                <p>Ruta 1 - Km 3,5 | Villa de Merlo, San Luis. Argentina</p>
+                <p>+54 (0266) 436 7691</p>
+                <p>ventas@constelacionsemillas.com</p>
+            </div>
+            <div>
+                <ul>
+                    <li><a class="montserrat-bold" href="#form">Contactanos</a></li>
+                    <li><a class="montserrat-bold" href="index.html#quienes">Quienes Somos</a></li>
+                    <li><a class="montserrat-bold" href="semillas-frutas.html">Frutas</a></li>
+                    <li><a class="montserrat-bold" href="semillas-hojas.html">Hojas</a></li>
+                    <li><a class="montserrat-bold" href="semillas-flores.html">Flores</a></li>
+                    <!-- <li class="dropdown">
+                        <a class="montserrat-bold" href="#">Semillas <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="semillas-frutas.html">Frutas</a></li>
+                            <li><a href="semillas-hojas.html">Hojas</a></li>
+                            <li><a href="semillas-flores.html">Flores</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+            <div>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="cierre">
+            <p>&copy; Constelación Semillas Agroecológicas</p>
+            <p>Desarrollado por <a href="https://contenidx.com.ar/" target="_blank" rel="noopener noreferrer">Contenidx</a></p>
+        </div>
     </footer>
 </body>
 </html>
