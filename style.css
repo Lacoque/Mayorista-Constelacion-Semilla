@@ -11,6 +11,12 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
     --violeta: #56427F;
     --violeta-oscuro: #ccb8f3;
@@ -125,11 +131,15 @@ nav ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
+nav ul li a,
+nav ul li button {
     display: inline-block;
     transition: all 0.15s ease;
     color: var(--violeta);
     text-decoration: none;
+    background: none;
+    border: none;
+    font-size: medium;
 }
 nav a img {
     height: 60px;
@@ -143,7 +153,7 @@ nav a img {
         transition: all 0.15s ease;
     }
     
-    nav .dropdown > a:first-of-type:hover {
+    nav .dropdown > button:first-of-type:hover {
         transform: scale(1);
         color: var(--amarillo-brillante);
     }
@@ -196,6 +206,31 @@ nav a img {
 .dropdown-content li a:hover {
   background-color: var(--violeta-10);
   color: var(--amarillo-brillante);
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--violeta);
+  cursor: pointer;
+  margin-left: auto;
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+}
+
+.dropdown.open .dropdown-content {
+  display: flex;
 }
 
 
@@ -313,7 +348,7 @@ header > p {
 }
 
 .productos-destacados-categorias.inicio > .productos .tarjeta {
-    width: 250px;
+    width: 20vw;
 }
 
 .productos-destacados-categorias .accion-producto p {
@@ -327,6 +362,7 @@ header > p {
 .tarjeta {
     height: fit-content;
     width: 350px;
+    min-width: 250px;
     background: #fff;
     border: 2px solid #ddd;
     border-radius: 5px;
@@ -361,6 +397,7 @@ header > p {
 
 .imagen-producto img {
     height: 300px;
+    width: 100%;
     max-width: 100%;
     object-fit: cover;
     aspect-ratio: 1 / 1;
@@ -726,5 +763,100 @@ footer .cierre p a {
 
     footer .cierre p a:hover {
         color: var(--violeta);
+    }
+}
+
+
+
+
+
+/* Mobile */
+
+@media screen and (max-width: 960px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+        padding-left: 1rem;
+    }
+
+    .dropdown-content li a {
+        padding: 8px 0;
+    }
+
+
+    .banner-accion {
+        flex-direction: column;
+    }
+
+    #form {
+        flex-direction: column;
+    }
+
+    .footer-contenido {
+        flex-direction: column;
+    }
+
+    .productos-destacados-categorias {
+        padding: 1rem;
+    }
+
+    #quienes {
+        flex-direction: column;
+    }
+
+    .info-quienes-somos {
+        position: relative;
+        right: 0;
+        width: 100%;
+    }
+
+    .quienes-somos img {
+        width: 100%;
+    }
+
+    .productos-destacados-categorias.inicio > .productos .tarjeta {
+        width: 100%;
+    }
+
+    #form > img:first-of-type {
+        width: 100%;
+    }
+
+    #direccion {
+        display: none;
+    }
+
+    .logo-area {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .mayorista {
+        display: none;
     }
 }

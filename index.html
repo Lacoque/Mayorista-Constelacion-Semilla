@@ -13,25 +13,31 @@
 <body>
     <div class="menu-navegador">
         <nav>
-            <div>
-                <a class="montserrat-bold" href="index.html"><img src="assets/img/marca-c-s.png" alt="marca de constelación semillas"></a>
-                <p class="montserrat-bold">Mayorista</p>
+            <div class="logo-area">
+                <a class="montserrat-bold" href="index.html">
+                    <img src="assets/img/marca-c-s.png" alt="marca de constelación semillas">
+                </a>
+                <p class="montserrat-bold mayorista">Mayorista</p>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
-            <ul>
+            <ul class="nav-links">
                 <li><a class="montserrat-bold" href="index.html#form">Contactanos</a></li>
                 <li><a class="montserrat-bold" href="index.html#quienes">Quienes Somos</a></li>
                 <li class="dropdown">
-                    <a class="montserrat-bold" href="#">Semillas <i class="fa-solid fa-chevron-down"></i></a>
+                    <button class="dropdown-toggle montserrat-bold">Semillas <i class="fa-solid fa-chevron-down"></i></button>
                     <ul class="dropdown-content">
-                        <li><a href="frutos.html">Frutas</a></li>
-                        <li><a href="hojas.html">Hojas</a></li>
-                        <li><a href="flores.html">Flores</a></li>
-                        <li><a href="raices.html">Raíces</a></li>
+                    <li><a href="frutos.html">Frutas</a></li>
+                    <li><a href="hojas.html">Hojas</a></li>
+                    <li><a href="flores.html">Flores</a></li>
+                    <li><a href="raices.html">Raíces</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </div>
+
     <!-- Encabezado -->
     <header>
         <h1 class="montserrat-regular">Venta mayorista<i class="fa-solid fa-truck"></i></h1>
@@ -217,5 +223,19 @@
             <p>Desarrollado por <a href="https://contenidx.com.ar/" target="_blank" rel="noopener noreferrer">Contenidx</a></p>
         </div>
     </footer>
+    <script>
+        const toggleBtn = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdown = document.querySelector('.dropdown');
+
+        toggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        dropdownToggle.addEventListener('click', () => {
+            dropdown.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
