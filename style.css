@@ -312,7 +312,7 @@ header > p {
     text-decoration: none;
 }
 
-.productos-destacados-categorias > .productos .tarjeta {
+.productos-destacados-categorias.inicio > .productos .tarjeta {
     width: 250px;
 }
 
@@ -326,7 +326,7 @@ header > p {
 
 .tarjeta {
     height: fit-content;
-    width: 400px;
+    width: 350px;
     background: #fff;
     border: 2px solid #ddd;
     border-radius: 5px;
@@ -338,13 +338,15 @@ header > p {
     .tarjeta:hover {
         border: 2px solid var(--violeta);
         box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        /* transform: translateY(-5px); */
         transition: all 0.3s ease;
     }
     .tarjeta:hover .imagen-producto img {
-        border-bottom: 2px solid var(--violeta);
         transform: scale(1.05);
         transition: all 0.3s ease;
+    }
+
+    .tarjeta:hover .contenido-producto {
+        border-top: 2px solid var(--violeta);
     }
 
     .productos-destacados-categorias .tarjeta:hover .accion-producto p {
@@ -353,8 +355,12 @@ header > p {
     }
 }
 
+.imagen-producto {
+    overflow: hidden;
+}
+
 .imagen-producto img {
-    height: 100%;
+    height: 300px;
     max-width: 100%;
     object-fit: cover;
     aspect-ratio: 1 / 1;
@@ -627,10 +633,20 @@ header > p {
 
 
 #direccion {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    /* padding: 2rem; */
+}
+
+#direccion address {
+    top: -5rem;
+    position: absolute;
+    border-radius: 5px;
+    padding: .5rem;
+    background-color: var(--negro);
+    color: var(--blanco);
 }
 
 
@@ -641,7 +657,7 @@ footer {
     background-color: var(--negro-08);
     color: var(--blanco);
     text-align: start;
-    padding: 1rem 4rem;
+    padding: 3rem 4rem 1rem;
 }
 
 footer img {
@@ -679,10 +695,36 @@ footer .footer-contenido ul li a {
 }
 
 @media(hover:hover) {
-    footer .footer-contenido ul li:hover a {
+    footer .footer-contenido ul li:hover a,
+    footer .redes a:hover {
         color: var(--amarillo)
     }
     footer .footer-contenido ul li:hover {
-        transform:translateX(5px)
+        transform:translateX(5px);
+    }
+}
+
+footer .cierre {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 0rem 2rem;
+    width: 100%;
+}
+
+footer .cierre p a {
+    font-weight: 600;
+    padding: .3rem;
+    border-radius: 5px;
+    transition: background-color 1s, color .3s;
+}
+
+@media (hover:hover) {
+    footer:hover .cierre p a {
+        color: var(--blanco);
+        background-color: rgb(66, 66, 66, 0.4);
+    }
+
+    footer .cierre p a:hover {
+        color: var(--violeta);
     }
 }
