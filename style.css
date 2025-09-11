@@ -859,4 +859,22 @@ footer .cierre p a {
     .mayorista {
         display: none;
     }
+
+    footer .footer-contenido {
+        gap: 2rem;
+    }
+
+    header {
+        padding: 30px;
+    }
+
+    header > h1:first-of-type {
+        font-size: smaller;
+        border-radius: 5px;
+    }
+
+    .productos-destacados-categorias .tarjeta .accion-producto p {
+        opacity: 1;
+    }
+
 }
