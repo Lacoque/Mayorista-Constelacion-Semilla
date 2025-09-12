@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Sitemap: https://mayorista.constelacionsemillas.com/sitemap.xml
+
+# Bloquear carpetas sensibles (cuando exxista)
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
