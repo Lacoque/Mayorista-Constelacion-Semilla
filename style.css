@@ -443,6 +443,7 @@ header > p {
     align-items: center;
 }
 .banner-accion {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
