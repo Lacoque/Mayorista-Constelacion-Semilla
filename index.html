@@ -39,14 +39,11 @@
             </ul>
         </nav>
     </div>
-
-    <!-- Encabezado -->
     <header>
         <h1 class="montserrat-regular">Venta mayorista<i class="fa-solid fa-truck"></i></h1>
         <h2>Semillas Agroecológicas</h2>
         <p>Catálogo de Variedades para Siembra | Hortalizas Sin Agroquímicos</p>
     </header>
-
     <!-- Sección: Quiénes somos -->
     <section>
         <div class="productos-destacados-categorias inicio">
@@ -59,14 +56,12 @@
                         </div>
                         <div class="contenido-producto">
                             <h3 class="nombre-producto montserrat-bold">Frutos</h3>
-                            <!-- <span class="categoria-etiqueta montserrat-bold">frutos<i class="fa-solid fa-apple-whole"></i></span> -->
                         </div>
                         <div class="accion-producto">
                             <p>Ver todos los productos de la Categoría</p>
                         </div>
                     </div>
                 </a>
-
                 <a href="./hojas.html">
                     <div class="tarjeta">
                         <div class="imagen-producto">
@@ -74,14 +69,12 @@
                         </div>
                         <div class="contenido-producto">
                             <h3 class="nombre-producto montserrat-bold">Hojas</h3>
-                            <!-- <span class="categoria-etiqueta montserrat-bold">hojas<i class="fa-solid fa-seedling"></i></span> -->
                         </div>
                         <div class="accion-producto">
                             <p>Ver todos los productos de la Categoría</p>
                         </div>    
                     </div>
                 </a>
-
                 <a href="./raices.html">
 
                     <div class="tarjeta">
@@ -90,14 +83,12 @@
                         </div>
                         <div class="contenido-producto">
                             <h3 class="nombre-producto montserrat-bold">Raíces</h3>
-                            <!-- <span class="categoria-etiqueta montserrat-bold">raíces<i class="fa-solid fa-carrot"></i></span> -->
                         </div>
                         <div class="accion-producto">
                             <p>Ver todos los productos de la Categoría</p>
                         </div>    
                     </div>
                 </a>
-
                 <a href="./flores.html">
                     <div class="tarjeta">
                         <div class="imagen-producto">
@@ -105,18 +96,14 @@
                         </div>
                         <div class="contenido-producto">
                             <h3 class="nombre-producto montserrat-bold">Flores</h3>
-                            <!-- <span class="categoria-etiqueta montserrat-bold">flores<i class="fa-solid fa-leaf"></i></span> -->
                         </div>
                         <div class="accion-producto">
                             <p>Ver todos los productos de la Categoría</p>
                         </div>    
                     </div>
                 </a>
-
-
             </div>
         </div>
-
         <div id="quienes" class="quienes-somos">
             <img src="assets/img/campo-constelacion-semilla.jpg" alt="Campo de constelación semillas">
             <div class="info-quienes-somos">
@@ -131,10 +118,8 @@
                     <a href="index.html#form">Comunicarme <i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
-            <!-- <button type="button">Comunicarme<i class="fa-solid fa-envelope"></i></button> -->
         </div>
     </section>
-
     <section>
         <div class="banner">
             <a class="banner-accion" href="#contacto">
@@ -148,7 +133,6 @@
             </a>
         </div>
     </section>
-
     <!-- Sección: Contacto -->
     <section id="form">
         <img src="./assets/img/formulario-constelacion-semilla.jpg" alt="Logo de constelación semillas">
@@ -158,7 +142,7 @@
                 <h2>Contactanos</h2>
             </div>
             <p>Somos un emprendimiento social con sede en el pueblo de Merlo, San Luis, pero nos comunicamos con todo el mundo.</p>
-            <form name="contacto" method="POST" data-netlify="true">
+            <form name="contacto" method="POST" data-netlify="true" action="" onsubmit="handleSubmit(event)">
                 <input type="hidden" name="form-name" value="contacto" />
                 
                 <div class="campos">
@@ -185,7 +169,6 @@
             Ruta 1 - Km 3.5 | Villa de Merlo, San Luis, Argentina
         </address>
     </div>
-
     <!-- Footer -->
     <footer>
         <div class="footer-contenido">
@@ -231,5 +214,48 @@
             dropdown.classList.toggle('open');
         });
     </script>
+    <!-- funciondel form -->
+<div id="modal-exito" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>¡Gracias por escribirnos!</h3>
+        <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.</p>
+    </div>
+</div>
+<script>
+    async function handleSubmit(event) {
+        event.preventDefault(); 
+        const form = event.target;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString(),
+            });
+
+            if (response.ok) {
+                form.reset();
+                const modal = document.getElementById("modal-exito");
+                modal.style.display = "block";
+                document.querySelector(".cerrar").onclick = function() {
+                    modal.style.display = "none";
+                }
+                window.onclick = function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+            } else {
+                alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Ocurrió un problema. Revisa tu conexión o inténtalo más tarde.");
+        }
+    }
+</script>
 </body>
 </html>
